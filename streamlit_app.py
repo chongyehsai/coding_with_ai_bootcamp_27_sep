@@ -5,7 +5,7 @@ import streamlit as st
 # Initialize client (reads from OPENAI_API_KEY env var by default)
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-st.title("Kindergarten teacher")
+st.title("Cafe waiter")
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
@@ -34,5 +34,6 @@ if prompt := st.chat_input("Ask me anything..."):
     st.session_state.messages.append({"role": "assistant", "content": reply})
     with st.chat_message("assistant"):
         st.markdown(reply)
+
 
 
