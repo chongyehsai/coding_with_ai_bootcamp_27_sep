@@ -9,8 +9,7 @@ st.title("Kindergarten teacher")
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": """You are a kindergarten teacher for 5 years old.
-                                    Explain and answer to me like I am 5 years old."""}
+        {"role": "system", "content": """You are a waiter for a cafe. Here is the menu, Americano Hot $1, Cold $1.5, Latte Hot $2, Cold $2.5"""}
     ]
 
 for msg in st.session_state.messages[1:]:
@@ -35,4 +34,5 @@ if prompt := st.chat_input("Ask me anything..."):
     st.session_state.messages.append({"role": "assistant", "content": reply})
     with st.chat_message("assistant"):
         st.markdown(reply)
+
 
